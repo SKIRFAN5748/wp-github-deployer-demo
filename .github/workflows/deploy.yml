@@ -1,0 +1,15 @@
+name: Deploy from WordPress
+
+on:
+  repository_dispatch:
+    types: [wp_deploy_trigger]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy Action
+        run: echo "✅ Deployment triggered from WordPress!"
